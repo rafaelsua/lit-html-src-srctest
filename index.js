@@ -13,10 +13,12 @@ const items = [{srcset: '', src:''},
 
 const myTemplate = ()=> html`
 <section class="horizontal-snap">
+${items.map((item) => html `
   <a><picture>
-    <source type="image/webp" srcset="">
-    <img src="" loading="lazy">
+    <source type="image/webp" srcset="${item.srcset}">
+    <img src="${item.src}" loading="lazy">
   </picture></a>
+`)};
 </section>
 `;
 
